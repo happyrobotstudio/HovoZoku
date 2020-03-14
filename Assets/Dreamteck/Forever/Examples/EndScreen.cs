@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
     using UnityEngine.UI;
 
     public class EndScreen : MonoBehaviour
@@ -19,10 +20,16 @@
 
         public void Restart()
         {
-            if (onRestartClicked != null) onRestartClicked();
-            StopAllCoroutines();
-            screenGroup.gameObject.SetActive(false);
+            
             Time.timeScale = 1f;
+
+            Scene scene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene("Level1");
+
+            // if (onRestartClicked != null) onRestartClicked();
+            // StopAllCoroutines();
+            // screenGroup.gameObject.SetActive(false);
+            // Time.timeScale = 1f;
         }
 
         public static void Open()

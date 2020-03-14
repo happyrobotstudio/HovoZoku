@@ -7,39 +7,39 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="95.080002"
-   inkscape:export-xdpi="95.080002"
-   inkscape:export-filename="C:\Users\happyrobot\Desktop\CODE\HovoZoko\Assets\Img\logo.png"
-   sodipodi:docname="logo.svg"
-   width="1024"
-   height="512"
-   viewBox="0 0 270.93332 135.46667"
-   version="1.1"
+   inkscape:version="1.0alpha2 (703f1f3, 2019-09-04)"
    id="svg8"
-   inkscape:version="1.0alpha2 (703f1f3, 2019-09-04)">
+   version="1.1"
+   viewBox="0 0 270.93332 135.46667"
+   height="512"
+   width="1024"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\Users\happyrobot\Desktop\CODE\HovoZoku\Assets\Menu\GUI Elements\UI_Icons\logo.png"
+   inkscape:export-xdpi="95.080002"
+   inkscape:export-ydpi="95.080002">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="-8"
-     inkscape:window-height="1017"
-     inkscape:window-width="1920"
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="400"
-     inkscape:cy="560"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
+     inkscape:pagecheckerboard="true"
      units="px"
-     inkscape:pagecheckerboard="true" />
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="560"
+     inkscape:cx="400"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -48,41 +48,33 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <flowRoot
-       transform="matrix(0.26458333,0,0,0.26458333,-7.5595238,-4.5357143)"
-       style="font-size:186.667px;line-height:1.25;font-family:Akkad;-inkscape-font-specification:Akkad;letter-spacing:0px;word-spacing:0px;fill:#ffffff;"
+       inkscape:export-ydpi="95.080002"
+       inkscape:export-xdpi="95.080002"
+       xml:space="preserve"
        id="flowRoot844"
-       xml:space="preserve"><flowRegion
-         style="font-size:186.667px;fill:#ffffff;"
-         id="flowRegion846"><rect
-           style="font-size:186.66666902px;fill:#ffffff;"
-           y="62.857143"
+       style="font-size:186.667px;line-height:0;font-family:Akkad;-inkscape-font-specification:Akkad;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1"
+       transform="matrix(0.26458333,0,0,0.26458333,-18.142857,6.4255882)"><flowRegion
+         id="flowRegion846"
+         style="font-size:186.667px;line-height:1.25;fill:#ff00ff;fill-opacity:1"><rect
+           id="rect848"
+           width="1048.5714"
+           height="454.28577"
            x="62.857143"
-           height="288.57144"
-           width="980.00006"
-           id="rect848" /></flowRegion><flowPara
-         style="font-size:186.667px;fill:#ffffff;"
-         id="flowPara850">HovoZoku</flowPara><flowPara
-         id="flowPara852"
-         style="font-size:186.667px;fill:#ffffff;" /></flowRoot>    <flowRoot
-       transform="scale(0.26458333)"
-       style="font-size:40px;line-height:1.25;font-family:Akkad;-inkscape-font-specification:Akkad;letter-spacing:0px;word-spacing:0px"
-       id="flowRoot854"
-       xml:space="preserve"><flowRegion
-         id="flowRegion856"><rect
-           y="268.57144"
-           x="45.714287"
-           height="222.85715"
-           width="960"
-           id="rect858" /></flowRegion><flowPara
-         style="font-size:96.00000121px;text-anchor:middle;text-align:center;fill:#ff00ff"
-         id="flowPara860">Berzerker  Game</flowPara></flowRoot>  </g>
+           y="62.857143"
+           style="font-size:186.667px;fill:#ff00ff;fill-opacity:1" /></flowRegion><flowPara
+         style="font-size:160px;line-height:1.25;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1"
+         id="flowPara852">BERZERKER</flowPara><flowPara
+         id="flowPara863"
+         style="font-size:160px;line-height:1.25;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff00ff;fill-opacity:1">TAXI</flowPara><flowPara
+         id="flowPara861"
+         style="font-size:160px;line-height:1.25;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff00ff;fill-opacity:1" /></flowRoot>  </g>
 </svg>

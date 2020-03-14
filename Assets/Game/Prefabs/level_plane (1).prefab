@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 003c309fbed98a541a3d052e0f32d2c1, type: 2}
+  - {fileID: 2100000, guid: 503fbeafe8bcaa3488baac9253501005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,8 +174,9 @@ MonoBehaviour:
   builders: []
   uniqueResources:
   - {fileID: -5495902117074765545, guid: 9e668d0d9c7af2f45b3099f4ba1a6ba7, type: 3}
-  - {fileID: 2100000, guid: 003c309fbed98a541a3d052e0f32d2c1, type: 2}
-  - {fileID: 2800000, guid: 7540245e9fc36ba4bb27b3ff31f444df, type: 3}
+  - {fileID: 2100000, guid: 503fbeafe8bcaa3488baac9253501005, type: 2}
+  - {fileID: 2800000, guid: 13e17e034e2b6c3438831f3b181a6274, type: 3}
+  - {fileID: 2800000, guid: 27da4aeecd1b61245b4093b5ae0b0a4e, type: 3}
   unpacked: 0
   alwaysDraw: 0
   drawGeneratedSpline: 1

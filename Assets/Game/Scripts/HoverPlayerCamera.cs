@@ -49,6 +49,7 @@ namespace Dreamteck.Forever
             else targetOffset = Mathf.MoveTowards(targetOffset, target, Time.deltaTime * lowerSpeed);
             if (currentOffset < targetOffset) currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * elevateSpeed);
             else currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * lowerSpeed);
+            
             trs.position += projector.result.up * currentOffset;
         }
     }

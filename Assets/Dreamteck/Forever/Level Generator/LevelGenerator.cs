@@ -188,6 +188,7 @@ namespace Dreamteck.Forever
             _ready = true;
 
             
+            print("ACTIVATE HOVER");
             HoverPlayer.Instance.ActivateHover();
 
             
@@ -339,7 +340,8 @@ namespace Dreamteck.Forever
 
 
             Debug.Log("LOADED LEVEL");
-            MenuController.Instance.Hide();
+            if(MenuController.Instance != null)
+                MenuController.Instance.Hide();
 
         }
 

@@ -96,7 +96,11 @@ namespace Dreamteck.Forever
                         rb.AddForceAtPosition(-engines[i].up * localHoverVelocity.y * Mathf.InverseLerp(0.6f, 0f, forceRatio) * stabilizerStrenght, engines[i].position, ForceMode.Force);
                     }
                 }
+                else {
+                    //print("No Ray Hit");
+                }
             }
+
             //Create a matrix from the current projected result
             Matrix4x4 resultMatrix = Matrix4x4.TRS(projector.result.position, Quaternion.LookRotation(projector.result.forward, Vector3.up), Vector3.one);
             //Set the rotation of the player to match the path direction
