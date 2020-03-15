@@ -75,7 +75,10 @@ namespace Dreamteck.Forever
         }
 
         void FixedUpdate()
-        {
+        {   
+            
+            Vector3 forwarddir = trs.forward; //projector.result.forward
+
             for (int i = 0; i < engines.Length; i++)
             {
                 Ray ray = new Ray(engines[i].position, -engines[i].up);
@@ -84,7 +87,7 @@ namespace Dreamteck.Forever
                 //Raycast from each engine and apply hover force
                 if (Physics.Raycast(ray, out hit, hoverHeight))
                 {
-                    Matrix4x4 hitMatrix = Matrix4x4.TRS(hit.point, Quaternion.LookRotation(projector.result.forward, hit.normal), Vector3.one);
+                    Matrix4x4 hitMatrix = Matrix4x4.TRS(hit.point, Quaternion.LookRotation(forwarddir, hit.normal), Vector3.one);
                     Vector3 engineVelocity = rb.GetPointVelocity(engines[i].position);
                     Vector3 localHoverVelocity = hitMatrix.inverse.MultiplyVector(engineVelocity);
 
@@ -102,28 +105,42 @@ namespace Dreamteck.Forever
             }
 
             //Create a matrix from the current projected result
-            Matrix4x4 resultMatrix = Matrix4x4.TRS(projector.result.position, Quaternion.LookRotation(projector.result.forward, Vector3.up), Vector3.one);
-            //Set the rotation of the player to match the path direction
-            //but also retain the local roll and pitch 
-            Vector3 resultLocalPlayerForward = resultMatrix.inverse.MultiplyVector(trs.forward);
-            resultLocalPlayerForward.x = 0f;
-            resultLocalPlayerForward.Normalize();
-            rb.MoveRotation(Quaternion.LookRotation(resultMatrix.MultiplyVector(resultLocalPlayerForward), trs.up));
+            // Matrix4x4 resultMatrix = Matrix4x4.TRS(projector.result.position, Quaternion.LookRotation(projector.result.forward, Vector3.up), Vector3.one);
+            // //Set the rotation of the player to match the path direction
+            // //but also retain the local roll and pitch 
+            // Vector3 resultLocalPlayerForward = trs.forward; //resultMatrix.inverse.MultiplyVector(trs.forward);
+            // resultLocalPlayerForward.x = 0f;
+            // resultLocalPlayerForward.Normalize();
+            // rb.MoveRotation(Quaternion.LookRotation(resultMatrix.MultiplyVector(resultLocalPlayerForward), trs.up));
             
             //Handle player physics forces
             Vector3 localTorque = trs.InverseTransformDirection(rb.angularVelocity);
             localTorque.y = 0f;
             rb.angularVelocity = trs.TransformDirection(localTorque);
+
+
             Vector3 localVelocity = trs.InverseTransformDirection(rb.velocity);
-            if (forwardInput > 0f && localVelocity.z < maxSpeed)  rb.AddForce(projector.result.forward * acceleration * forwardInput * accelerationCurve.Evaluate(localVelocity.z / maxSpeed), ForceMode.Force);
-            else if(forwardInput < 0f && localVelocity.z > 0f) rb.AddForce(-projector.result.forward * brakeForce * -forwardInput, ForceMode.Force);
-            if((sidewaysInput > 0f && localVelocity.x < turnSpeed) || (sidewaysInput < 0f && localVelocity.x > -turnSpeed))
-            rb.AddRelativeForce(Vector3.right * sidewaysInput * agility, ForceMode.Force);
+            if (forwardInput > 0f && localVelocity.z < maxSpeed)  
+                rb.AddForce(forwarddir * acceleration * forwardInput * accelerationCurve.Evaluate(localVelocity.z / maxSpeed), ForceMode.Force);
+            else if(forwardInput < 0f && localVelocity.z > 0f) 
+                rb.AddForce(-forwarddir * brakeForce * -forwardInput, ForceMode.Force);
+            if((sidewaysInput > 0f && localVelocity.x < turnSpeed) || (sidewaysInput < 0f && localVelocity.x > -turnSpeed)) {
+               // rb.AddRelativeForce(trs.right * sidewaysInput * agility, ForceMode.Force);
+              
+                Quaternion deltaRotation = Quaternion.Euler(0f, sidewaysInput * 150f * Time.deltaTime, 0f);
+                rb.MoveRotation(rb.rotation * deltaRotation);
+            }
+                
+
             rb.AddForce(Vector3.down * gravityForce, ForceMode.Acceleration);
-            localVelocity = resultMatrix.inverse.MultiplyVector(rb.velocity);
-            localVelocity.z = Mathf.Clamp(localVelocity.z, -maxSpeed, maxSpeed);
-            localVelocity.x = Mathf.Clamp(localVelocity.x, -turnSpeed, turnSpeed);
-            rb.velocity = resultMatrix.MultiplyVector(localVelocity);
+
+           
+
+
+            // localVelocity = rb.velocity; //resultMatrix.inverse.MultiplyVector(rb.velocity);
+            // localVelocity.z = Mathf.Clamp(localVelocity.z, -maxSpeed, maxSpeed);
+            // localVelocity.x = Mathf.Clamp(localVelocity.x, -turnSpeed, turnSpeed);
+            // rb.velocity = resultMatrix.MultiplyVector(localVelocity);
         }
 
         private void OnCollisionStay(Collision collision)

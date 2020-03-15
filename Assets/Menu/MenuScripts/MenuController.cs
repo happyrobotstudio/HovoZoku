@@ -282,7 +282,7 @@ public class MenuController : MonoBehaviour
     {
         if (ButtonType == "Yes")
         {
-            SceneManager.LoadScene(level, LoadSceneMode.Additive);
+            SceneManager.LoadScene(level);
 
         }
 
@@ -301,7 +301,7 @@ public class MenuController : MonoBehaviour
                 Debug.Log("I WANT TO LOAD THE SAVED GAME");
                 //LOAD LAST SAVED SCENE
                 levelToLoad = PlayerPrefs.GetString("SavedLevel");
-                SceneManager.LoadScene(levelToLoad, LoadSceneMode.Additive);
+                SceneManager.LoadScene(levelToLoad);
 
                 
             }

@@ -44,7 +44,7 @@
             while (screenGroup.alpha < 1f)
             {
                 screenGroup.alpha = Mathf.MoveTowards(screenGroup.alpha, 1f, Time.unscaledDeltaTime);
-                Time.timeScale = 1f - screenGroup.alpha;
+                //Time.timeScale = 1f - screenGroup.alpha;
                 yield return null;
             }
         }

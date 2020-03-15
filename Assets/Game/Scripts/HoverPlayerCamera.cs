@@ -26,7 +26,7 @@ namespace Dreamteck.Forever
         private void FixedUpdate()
         {
             //Set the rotation of the camera between the player's path projection result and the direction towards the player
-            trs.rotation = Quaternion.Slerp(Quaternion.LookRotation(player.position - trs.position), Quaternion.LookRotation(projector.result.forward, Vector3.up), 0.75f);
+            trs.rotation = Quaternion.Slerp(Quaternion.LookRotation(player.position - trs.position), Quaternion.LookRotation(projector.result.forward, Vector3.up), 0.5f);
             //Create an inversed matrix from the projected result
             Matrix4x4 projectionMatrix = Matrix4x4.TRS(projector.result.position, projector.result.rotation, Vector3.one).inverse;
             //Get the player's local position to the projected result
@@ -49,7 +49,7 @@ namespace Dreamteck.Forever
             else targetOffset = Mathf.MoveTowards(targetOffset, target, Time.deltaTime * lowerSpeed);
             if (currentOffset < targetOffset) currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * elevateSpeed);
             else currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * lowerSpeed);
-            
+
             trs.position += projector.result.up * currentOffset;
         }
     }
